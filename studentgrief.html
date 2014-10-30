@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student's grief calculator</title>   
+</head>
+<body>
+<h1> Welcome to the Student's grief calculator</h1>
+<form id="frm1" action="form_action.asp">
+Final grade value: <input type="number" name="fname" value="8"><br> <br>
+Grade: <input type="number" name="lname" value="25"><br><br>
+
+
+</form> 
+
+<hr>
+
+<p>Click "Calculate" to add points. Press Restart when you want to start over</p>
+
+<button onclick="myFunction()">Calculate</button>
+
+<hr>
+
+Lost points: <br>
+
+<p id="demo"></p>
+
+<script>
+var  total;
+var suma = 0.0;
+var text = "";
+function myFunction() {
+    var x = document.getElementById("frm1");
+
+
+    suma += parseFloat(x.elements[0].value)-((parseFloat(x.elements[0].value)*parseFloat(x.elements[1].value))/100.0);
+    text = suma + "<br>";
+    
+
+    document.getElementById("demo").innerHTML = text;
+}
+
+function restart()
+{
+ suma = 0;
+ text = "";
+ document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+<hr>
+
+<button onclick="restart()">Restart</button>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Mad Devs &copy; Wroups 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
