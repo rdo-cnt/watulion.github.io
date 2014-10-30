@@ -5,6 +5,11 @@
 </head>
 <body>
 <h1> Welcome to the Student's grief calculator</h1>
+
+<button onclick="instructions()">Instructions</button>
+
+<p id="instructiontext"></p>
+
 <form id="frm1" action="form_action.asp">
 Final grade value: <input type="number" name="fname" value="8"><br> <br>
 Grade: <input type="number" name="lname" value="25"><br><br>
@@ -26,9 +31,11 @@ Lost points: <br>
 
 <script>
 document.getElementById("demo").innerHTML = 0;
+var tutorial = false;
 var  total;
 var suma = 0.0;
 var text = "";
+var instructiontextvar = "";
 function myFunction() {
     var x = document.getElementById("frm1");
 
@@ -57,6 +64,20 @@ function restart()
  suma = 0;
  text = "";
  document.getElementById("demo").innerHTML = text;
+}
+
+function instructions()
+{
+ if(!tutorial)
+ {
+ instructiontextvar = "<hr>" + "Alright, here are the steps on how to use this calculator:" + "<br>" + "<br>" + "<b>Step 1:</b> Insert the value your activity has on your final grade on the 'Final grade value' input box (Example: You input '25' because your midterm exam is 25% of your final grade)." + "<br>" + "<br>" +"<b>Step 2:</b> Insert the grade you got in your activity on the 'Grade' input box." + "<br>" + "<br>" + "<b>Step 3:</b> When you're done, press the 'Add Points' button." + "<br>" + "<br>" + "<b>Step 4:</b> Repeat steps 1, 2 and 3 if you need to add more points (Example: You also want to see how much you lost on a project, so you input the values and press 'Add points' again. <b>This numbers will stack! See Step 5 if you don't want your points to get stacked!</b>" + "<br>" + "<br>" + "<b>Step 5:</b> If you don't want numbers to stack, press the 'Restart' Button. It'll make the Lost points counter go back to 0." + "<br>" + "<hr>";
+ tutorial = true;
+ }else
+ {
+ instructiontextvar = "";
+ tutorial = false;
+ }
+ document.getElementById("instructiontext").innerHTML = instructiontextvar;
 }
 </script>
 
