@@ -25,6 +25,7 @@ Lost points: <br>
 <p id="demo"></p>
 
 <script>
+document.getElementById("demo").innerHTML = 0;
 var  total;
 var suma = 0.0;
 var text = "";
@@ -33,8 +34,20 @@ function myFunction() {
 
 
     suma += parseFloat(x.elements[0].value)-((parseFloat(x.elements[0].value)*parseFloat(x.elements[1].value))/100.0);
+     if (suma > 100)
+    text = suma + "!?? Reset the calculator. It's impossible to lose more than 100 points of your final grade.. unless the teacher gave extra points and you lost those too. Nah, that's impossible. Just restart it already" + "<br>";
+    else
+    {
+    if (suma == 100)
+    text = suma + "? You lost 100 points? I hope you're just adding numbers randomly. Otherwise reconsider your life" + "<br>";
+    else
+    {
+    if (suma > 30)
+    text = suma + " .....If your minimum passing grade is 70 you already lost the battle. Better luck next time"+ "<br>";
+    else
     text = suma + "<br>";
-    
+    }
+    }
 
     document.getElementById("demo").innerHTML = text;
 }
