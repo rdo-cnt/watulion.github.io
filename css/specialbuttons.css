@@ -1,0 +1,71 @@
+﻿#button3 {
+  background: #d11717 url('/images/watulioinstruction.png');
+  background-position: 0px 0px;
+  color: white;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+  font-size: 22px;
+  height: 58px;
+  width: 155px;
+  margin: 0px 0 0 0px;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  line-height: 58px;
+  
+  /*Transition*/
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  -ms-transition: All 0.5s ease;
+  transition: All 0.5s ease;
+  
+  /*Rounded Corners*/
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  
+  /*Shadow*/
+  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+#button3:hover {
+  background-position: 0px 58px;
+}
+
+#button4 {
+  background: #d11717 url('/images/watulioinstruction2.png');
+  background-position: 0px 0px;
+  color: white;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.3);
+  font-size: 22px;
+  height: 58px;
+  width: 155px;
+  margin: 0px 0 0 0px;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  line-height: 58px;
+  
+  /*Transition*/
+  -webkit-transition: All 0.5s ease;
+  -moz-transition: All 0.5s ease;
+  -o-transition: All 0.5s ease;
+  -ms-transition: All 0.5s ease;
+  transition: All 0.5s ease;
+  
+  /*Rounded Corners*/
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  
+  /*Shadow*/
+  -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+#button4:hover {
+  background-position: 0px 58px;
+}

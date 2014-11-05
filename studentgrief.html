@@ -2,117 +2,186 @@
 <html>
 <head>
 <title>Student's grief calculator</title>   
+<link rel="shortcut icon" href="images/watulion2.png">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/specialbuttons.css" rel="stylesheet">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <!-- Bootstrap Core CSS-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/slate.css" rel="stylesheet">
 
-</head>
-<body>
+    <script>
+    window.onload=function(){
+        document.getElementById("button4").style.display='none';
 
-<!-- Single button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Action <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
-
-<h1> Welcome to the Student's grief calculator</h1>
-
-<button onclick="instructions()">Instructions</button>
-
-<p id="instructiontext"></p>
-
-<form id="frm1" action="form_action.asp">
-Final grade value: <input type="number" name="fname" value="8"><br> <br>
-Grade: <input type="number" name="lname" value="25"><br><br>
-
-
-</form> 
-
-<hr>
-
-<p>Click "Add points" to see how many points you've lost so far. Press Restart when you want to start over</p>
-
-<button onclick="myFunction()">Add points</button>
-
-<hr>
-
-Lost points: <br>
-
-<p id="demo"></p>
-
-<script>
-document.getElementById("demo").innerHTML = 0;
-var tutorial = false;
-var  total;
-var suma = 0.0;
-var text = "";
-var instructiontextvar = "";
-function myFunction() {
-    var x = document.getElementById("frm1");
-
-
-    suma += parseFloat(x.elements[0].value)-((parseFloat(x.elements[0].value)*parseFloat(x.elements[1].value))/100.0);
-     if (suma > 100)
-    text = suma + "!?? Reset the calculator. It's impossible to lose more than 100 points of your final grade.. unless the teacher gave extra points and you lost those too. Nah, that's impossible. Just restart it already" + "<br>";
-    else
-    {
-    if (suma == 100)
-    text = suma + "? You lost 100 points? I hope you're just adding numbers randomly. Otherwise reconsider your life" + "<br>";
-    else
-    {
-    if (suma > 30)
-    text = suma + " .....If your minimum passing grade is 70 you already lost the battle. Better luck next time"+ "<br>";
-    else
-    text = suma + "<br>";
     }
-    }
+    </script>
 
-    document.getElementById("demo").innerHTML = text;
-}
-
-function restart()
-{
- suma = 0;
- text = "";
- document.getElementById("demo").innerHTML = text;
-}
-
-function instructions()
-{
- if(!tutorial)
- {
- instructiontextvar = "<hr>" + "Alright, here are the steps on how to use this calculator:" + "<br>" + "<br>" + "<b>Step 1:</b> Insert the value your activity has on your final grade on the 'Final grade value' input box (Example: You input '25' because your midterm exam is 25% of your final grade)." + "<br>" + "<br>" +"<b>Step 2:</b> Insert the grade you got on your activity into the 'Grade' input box." + "<br>" + "<br>" + "<b>Step 3:</b> When you're done, press the 'Add Points' button." + "<br>" + "<br>" + "<b>Step 4:</b> Repeat steps 1, 2 and 3 if you need to add more points (Example: You also want to see how much you lost on a project, so you input the values and press 'Add points' again. <b>This numbers will stack! See Step 5 if you don't want your points to get stacked!</b>" + "<br>" + "<br>" + "<b>Step 5:</b> If you don't want numbers to stack, press the 'Restart' Button. It'll make the Lost points counter go back to 0." + "<br>" + "<hr>";
- tutorial = true;
- }else
- {
- instructiontextvar = "";
- tutorial = false;
- }
- document.getElementById("instructiontext").innerHTML = instructiontextvar;
-}
-</script>
-
-<hr>
-
-<button onclick="restart()">Restart</button>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Watulio Productions &copy; 2014</p>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="span3 well">
+                <center>
+                    <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/c7.0.320.320/p320x320/10610934_10152476808463506_1406667069536783974_n.jpg?oh=d2feebb67d8c5924fa37990dfc73684a&amp;oe=54D9CCBF&amp;__gda__=1425427069_1e0b89f1e674fa4558c500fd677fda35" name="aboutme" width="140" height="140" class="img-circle"></a>
+                    <h3>Luis Juan Sanchez Padilla</h3>
+                    <em>click my face for Bio</em>
+                </center>
+            </div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title" id="myModalLabel">More About Luis</h4>
+                        </div>
+                        <div class="modal-body">
+                            <center>
+                                <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/c7.0.320.320/p320x320/10610934_10152476808463506_1406667069536783974_n.jpg?oh=d2feebb67d8c5924fa37990dfc73684a&amp;oe=54D9CCBF&amp;__gda__=1425427069_1e0b89f1e674fa4558c500fd677fda35" name="aboutme" width="140" height="140" border="0" class="img-circle">
+                                <h3 class="media-heading">Luis Juan Sanchez Padilla <small>Mexico</small></h3>
+                                <span><strong>Skills: </strong></span>
+                                <span class="label label-warning">Javascript</span>
+                                <span class="label label-warning">C++</span>
+                                <span class="label label-warning">Java</span>
+                                <span class="label label-info">Git</span>
+                                <span class="label label-success">Windows</span>
+                                <span class="label label-success">OSX</span>
+                                <span class="label label-success">Linux</span>
+                            </center>
+                            <hr>
+                            <center>
+                                <p class="text-center">
+                                    <strong>Bio: </strong><br>
+                                    This is me
+                                </p>
+                                <br>
+                                <button type="button" onclick="window.location.href='https://www.facebook.com/ljohnny17'" formtarget="_blank" class="btn social-icon facebook btn-circle"><a class=" social-icon facebook"><span class="fa fa-facebook"></span></a></button>
+                                <button type="button" onclick="window.location.href='https://twitter.com/JohnnySanPad'" class="btn social-icon twitter btn-circle"><a class="social-icon twitter"><span class="fa fa-twitter"></span></a></button>
+                                <button type="button" onclick="window.location.href='https://github.com/luisjuansp'" class="btn social-icon github btn-circle"><a class="social-icon github"><span class="fa fa-github-alt"></span></a></button>
+                                <button type="button" onclick="window.location.href='https://google.com/+LuisJuanSanchezPadilla'" class="btn social-icon google-plus btn-circle"><a class="social-icon google-plus"><span class="fa fa-google-plus"></span></a></button>
+                                <button type="button" onclick="window.location.href='https://www.linkedin.com/pub/luis-s%C3%A1nchez/84/403/573'" class="btn social-icon linkedin btn-circle"><a class="social-icon linkedin"><span class="fa fa-linkedin"></span></a></button>
+                            </center>
+                        </div>
+                        <div class="modal-footer">
+                            <center>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </center>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+
+    <!-- Single button -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Action <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+        <div class="container-fluid">
+           <h1><b> Welcome to the Student's grief calculator</b></h1>
+
+            <a onclick="instructions()" id="button3" class="btn"></a>
+            <a onclick="instructions()" id="button4" class="btn"></a>
+
+            <p id="instructiontext"></p>
+
+            <form id="frm1" action="form_action.asp">
+                Final grade value: <input type="number" name="fname" value="8"><br> <br>
+        Grade: <input type="number" name="lname" value="25"><br><br>
+
+
+            </form>
+        </div>
+
+            <hr>
+        <div class="container-fluid">
+            <p>Click "Add points" to see how many points you've lost so far. Press Restart when you want to start over</p>
+
+            <button type="button" class="btn btn-success" onclick="myFunction()">Add points</button>
+
+            </div>
+        <br>
+        <div class="container-fluid">
+            <div class="span3 well">
+                Lost points: <br>
+
+                <p id="demo"></p>
+
+                <script>
+                    document.getElementById("demo").innerHTML = 0;
+                    var tutorial = false;
+                    var total;
+                    var suma = 0.0;
+                    var text = "";
+                    var instructiontextvar = "";
+                    function myFunction() {
+                        var x = document.getElementById("frm1");
+
+
+                        suma += parseFloat(x.elements[0].value) - ((parseFloat(x.elements[0].value) * parseFloat(x.elements[1].value)) / 100.0);
+                        if (suma > 100)
+                            text = suma + "!?? Reset the calculator. It's impossible to lose more than 100 points of your final grade.. unless the teacher gave extra points and you lost those too. Nah, that's impossible. Just restart it already" + "<br>";
+                    else {
+                            if (suma == 100)
+                                text = suma + "? You lost 100 points? I hope you're just adding numbers randomly. Otherwise reconsider your life" + "<br>";
+                    else {
+                                if (suma > 30)
+                                    text = suma + " .....If your minimum passing grade is 70 you already lost the battle. Better luck next time" + "<br>";
+                    else
+                                    text = suma + "<br>";
+                    }
+                    }
+
+                        document.getElementById("demo").innerHTML = text;
+                    }
+
+                    function restart() {
+                        suma = 0;
+                        text = "0";
+                        document.getElementById("demo").innerHTML = text;
+                    }
+
+                        function instructions() {
+                            if (!tutorial) {
+                                document.getElementById("button3").style.display = 'none';
+                                document.getElementById("button4").style.display = 'block';
+                                instructiontextvar = "<hr>" + "Alright, here are the steps on how to use this calculator:" + "<br>" + "<br>" + "<b>Step 1:</b> Insert the value your activity has on your final grade on the 'Final grade value' input box (Example: You input '25' because your midterm exam is 25% of your final grade)." + "<br>" + "<br>" + "<b>Step 2:</b> Insert the grade you got on your activity into the 'Grade' input box." + "<br>" + "<br>" + "<b>Step 3:</b> When you're done, press the 'Add Points' button." + "<br>" + "<br>" + "<b>Step 4:</b> Repeat steps 1, 2 and 3 if you need to add more points (Example: You also want to see how much you lost on a project, so you input the values and press 'Add points' again. <b>This numbers will stack! See Step 5 if you don't want your points to get stacked!</b>" + "<br>" + "<br>" + "<b>Step 5:</b> If you don't want numbers to stack, press the 'Restart' Button. It'll make the Lost points counter go back to 0." + "<br>" + "<hr>";
+                                tutorial = true;
+                            } else {
+                                document.getElementById("button4").style.display = 'none';
+                                document.getElementById("button3").style.display = 'block';
+                                instructiontextvar = "";
+                                tutorial = false;
+                            }
+                            document.getElementById("instructiontext").innerHTML = instructiontextvar;
+                        }
+    </script>
+        </div>
+    </div>
+        
+    <div class="container-fluid">
+        <button type="button" class="btn btn-warning" onclick="restart()">Restart</button>
+
+    </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p>Watulio Productions &copy; 2014</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
 
 <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
