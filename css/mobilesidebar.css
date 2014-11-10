@@ -5,6 +5,7 @@
 	margin: 0 auto;
 	overflow:hidden;
     
+    
 
 }
 
@@ -15,9 +16,12 @@
 }
 
 .sidebar{
+    position:fixed;
+    right: 0px;
 	background-color:#333333;
 	width:200px;
     height: 2000px;
+    
     
 	float:right;
     border-left: 4px solid #1b9bff;
@@ -42,6 +46,7 @@
 
 	.container{
 		width:100%;
+        
 	}
 
 	.main-section, .sidebar{
@@ -52,6 +57,9 @@
 
     .sidebar{
     height: 100%;
+    position: initial;
+    
+    
     }
 
 
