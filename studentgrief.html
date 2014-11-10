@@ -7,6 +7,7 @@
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/specialbuttons.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
+    <link href="css/mobilesidebar.css" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <!-- Bootstrap Core CSS-->
@@ -21,11 +22,42 @@
 
     </head>
     <body>
+
+        <aside class="sidebar"><p>This is side bar</p></aside>
+
+        <div id='cssmenu'>
+            <ul>
+                <li><a href='#'><span>Home</span></a></li>
+                <li class='active has-sub'>
+                    <a href='#'><span>Products</span></a>
+                    <ul>
+                        <li class='has-sub'>
+                            <a href='#'><span>Product 1</span></a>
+                            <ul>
+                                <li><a href='#'><span>Sub Product</span></a></li>
+                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                            </ul>
+                        </li>
+                        <li class='has-sub'>
+                            <a href='#'><span>Product 2</span></a>
+                            <ul>
+                                <li><a href='#'><span>Sub Product</span></a></li>
+                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href='#'><span>About</span></a></li>
+                <li class='last'><a href='#'><span>Contact</span></a></li>
+            </ul>
+        </div>
+
+
         <div class="container-fluid">
             <div class="span3 well">
                 <center>
                     <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/c7.0.320.320/p320x320/10610934_10152476808463506_1406667069536783974_n.jpg?oh=d2feebb67d8c5924fa37990dfc73684a&amp;oe=54D9CCBF&amp;__gda__=1425427069_1e0b89f1e674fa4558c500fd677fda35" name="aboutme" width="140" height="140" class="img-circle"></a>
-                    <h3> Juanchez Patilla Madilla Quesadilla </h3>
+                    <h3> Welcome to the student grief calculator! </h3>
                     <em>click lemadface for Bio</em>
                 </center>
             </div>
