@@ -8,6 +8,7 @@
     <link href="css/specialbuttons.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/mobilesidebar.css" rel="stylesheet">
+    <link href="css/sidebar.css" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <!-- Bootstrap Core CSS-->
@@ -23,36 +24,20 @@
     </head>
     <body>
 
-        <aside class="sidebar"><p>This is side bar</p></aside>
-
-        <div id='cssmenu'>
-            <ul>
-                <li><a href='#'><span>Home</span></a></li>
-                <li class='active has-sub'>
-                    <a href='#'><span>Products</span></a>
-                    <ul>
-                        <li class='has-sub'>
-                            <a href='#'><span>Product 1</span></a>
-                            <ul>
-                                <li><a href='#'><span>Sub Product</span></a></li>
-                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                            </ul>
-                        </li>
-                        <li class='has-sub'>
-                            <a href='#'><span>Product 2</span></a>
-                            <ul>
-                                <li><a href='#'><span>Sub Product</span></a></li>
-                                <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href='#'><span>About</span></a></li>
-                <li class='last'><a href='#'><span>Contact</span></a></li>
-            </ul>
-        </div>
+        <aside class="sidebar">
+            <div id='cssmenu'>
+                <ul>
+                    <li><a href='#'><span>Home</span></a></li>
+                    <li><a href='#'><span>About</span></a></li>
+                    <li class='last'><a href='#'><span>Contact</span></a></li>
+                    <li><a href='#'><span>About</span></a></li>
+                </ul>
+            </div>
 
 
+        </aside>
+
+        <div class=" main-section">
         <div class="container-fluid">
             <div class="span3 well">
                 <center>
@@ -203,8 +188,9 @@
         
     <div class="container-fluid">
         <button type="button" class="btn btn-warning" onclick="restart()">Restart</button>
-
+        </div>
     </div>
+       
         <footer>
             <div class="container">
                 <div class="row">
