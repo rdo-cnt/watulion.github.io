@@ -16,13 +16,13 @@
 }
 
 .sidebar{
+    z-index : 1000;
     position:fixed;
     right: 0px;
 	background-color:#333333;
 	width:200px;
     height: 2000px;
-    
-    
+        
 	float:right;
     border-left: 4px solid #1b9bff;
 	
@@ -56,10 +56,11 @@
 	}
 
     .sidebar{
+    border-left: 0px;
+    border-bottom: 4px solid #1b9bff;
     height: 100%;
     position: initial;
-    
-    
+
     }
 
 
