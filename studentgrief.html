@@ -86,9 +86,9 @@
                                     This is me
                                 </p>
                                 <br>
-                                <button type="button" onclick="window.location.href='https://www.facebook.com/ljohnny17'" formtarget="_blank" class="btn social-icon facebook btn-circle"><a class=" social-icon facebook"><span class="fa fa-facebook"></span></a></button>
-                                <button type="button" onclick="window.location.href='https://twitter.com/JohnnySanPad'" class="btn social-icon twitter btn-circle"><a class="social-icon twitter"><span class="fa fa-twitter"></span></a></button>
-                                <button type="button" onclick="window.location.href='https://github.com/luisjuansp'" class="btn social-icon github btn-circle"><a class="social-icon github"><span class="fa fa-github-alt"></span></a></button>
+                                <!--<button type="button" onclick="window.location.href='https://www.facebook.com/ljohnny17'" formtarget="_blank" class="btn social-icon facebook btn-circle"><a class=" social-icon facebook"><span class="fa fa-facebook"></span></a></button>-->
+                                <!--<button type="button" onclick="window.location.href='https://twitter.com/JohnnySanPad'" class="btn social-icon twitter btn-circle"><a class="social-icon twitter"><span class="fa fa-twitter"></span></a></button>-->
+                                <button type="button" onclick="window.location.href='https://github.com/watulion'" class="btn social-icon github btn-circle"><a class="social-icon github"><span class="fa fa-github-alt"></span></a></button>
                                 <button type="button" onclick="window.location.href='https://google.com/+LuisJuanSanchezPadilla'" class="btn social-icon google-plus btn-circle"><a class="social-icon google-plus"><span class="fa fa-google-plus"></span></a></button>
                                 <button type="button" onclick="window.location.href='https://www.linkedin.com/pub/luis-s%C3%A1nchez/84/403/573'" class="btn social-icon linkedin btn-circle"><a class="social-icon linkedin"><span class="fa fa-linkedin"></span></a></button>
                             </center>
@@ -134,6 +134,99 @@
             </form>
         </div>
 
+
+            <!--Empieza tabla de actividades-->
+            <h1>Table </h1>
+            <h2 id="buttontexto"> </h2>
+                    <p id="tabletext"></p>
+                    <script language="javascript" type="text/javascript">
+<!--
+
+    function cancelObject(id)
+    {
+        console.log(id);
+        valorActive[id] = false;
+        valorcount = valorcount - 1;
+        tableStuff();
+        calculateGrade();
+    }
+
+    var valorcount = 3, objectcount = 3, pass = "";
+    var tabletextvar = "";
+    var valorFinal = new Array();
+    valorFinal[0] = "22";
+    valorFinal[1] = "22";
+    valorFinal[2] = "26";
+
+    var valorParcial = new Array();
+    valorParcial[0] = "1";
+    valorParcial[1] = "2";
+    valorParcial[2] = "3";
+    valorParcial[3] = "4";
+    valorParcial[4] = "5";
+
+    var valorPerdido = new Array();
+    valorPerdido[0] = "22";
+    valorPerdido[1] = "22";
+    valorPerdido[2] = "26";
+
+    var valorActive = new Array();
+    valorActive[0] = true;
+    valorActive[1] = true;
+    valorActive[2] = true;
+
+   
+    function tableStuff() {
+        
+        tabletextvar = ""
+        if (valorcount > 0) {
+            tabletextvar += '<table class="table table-hover" style="width:100%">';
+            tabletextvar += "<tbody>";
+            tabletextvar += "<th>";
+            tabletextvar += "Final Value";
+            tabletextvar += "</th>";
+            tabletextvar += "<th>";
+            tabletextvar += "Grade";
+            tabletextvar += "</th>";
+            tabletextvar += "<th>";
+            tabletextvar += "Lost Points";
+            tabletextvar += "</th>";
+            tabletextvar += "<th>";
+            tabletextvar += "";
+            tabletextvar += "</th>";
+            tabletextvar += "<tr>"
+
+            var buttons = [];
+            for (var xq = 0; xq < objectcount; xq++) {
+                if (valorActive[xq]) {
+                    tabletextvar += "<td>";
+                    tabletextvar += valorParcial[xq];
+                    tabletextvar += "</td>";
+                    tabletextvar += "<td>";
+                    tabletextvar += valorFinal[xq];
+                    tabletextvar += "</td>";
+                    tabletextvar += "<td>";
+                    tabletextvar += valorPerdido[xq];
+                    tabletextvar += "</td>";
+                    tabletextvar += "<td>";
+                    tabletextvar += '<button value=' + xq + ' onclick="cancelObject(this.value);">Delete</button>'
+                    tabletextvar += "</td>";
+
+                }
+                tabletextvar += "</tr>";
+
+            }
+            tabletextvar += "</tbody>";
+            tabletextvar += "</table>";
+        }
+
+        //tableobj.innerHTML = tabletextvar;
+        document.getElementById("tabletext").innerHTML = tabletextvar;
+        //-->
+    }
+    tableStuff();
+                    </script>
+
             <hr>
         <div class="container-fluid">
             <p>Click "Add points" to see how many points you've lost so far. Press Restart when you want to start over</p>
@@ -155,25 +248,43 @@
                     var suma = 0.0;
                     var text = "";
                     var instructiontextvar = "";
-                    function myFunction() {
-                        var x = document.getElementById("frm1");
 
-
-                        suma += parseFloat(x.elements[0].value) - ((parseFloat(x.elements[0].value) * parseFloat(x.elements[1].value)) / 100.0);
+                    function calculateGrade()
+                    {
+                        suma = 0;
+                        for (var xq = 0; xq < objectcount; xq++) {
+                            if (valorActive[xq])
+                                suma += parseFloat(valorPerdido[xq]);
+                        }
                         if (suma > 100)
                             text = suma + "!?? Reset the calculator. It's impossible to lose more than 100 points of your final grade.. unless the teacher gave extra points and you lost those too. Nah, that's impossible. Just restart it already" + "<br>";
-                    else {
+                        else {
                             if (suma == 100)
                                 text = suma + "? You lost 100 points? I hope you're just adding numbers randomly. Otherwise reconsider your life" + "<br>";
-                    else {
+                            else {
                                 if (suma > 30)
                                     text = suma + " .....If your minimum passing grade is 70 you already lost the battle. Better luck next time" + "<br>";
-                    else
+                                else
                                     text = suma + "<br>";
-                    }
-                    }
+                            }
+                        }
 
                         document.getElementById("demo").innerHTML = text;
+                    }
+
+                    function myFunction() {
+                        
+                        var x = document.getElementById("frm1");
+                        valorcount++;
+                        objectcount++;
+                        valorParcial[valorcount-1] = parseFloat(x.elements[0].value);
+                        valorFinal[valorcount - 1] = parseFloat(x.elements[1].value);
+                        valorPerdido[valorcount - 1] = parseFloat(x.elements[0].value) - ((parseFloat(x.elements[0].value) * parseFloat(x.elements[1].value)) / 100.0);
+                        valorActive[valorcount - 1] = true;
+                        calculateGrade();
+                        //suma += parseFloat(x.elements[0].value) - ((parseFloat(x.elements[0].value) * parseFloat(x.elements[1].value)) / 100.0);
+                        tableStuff();
+                        
                     }
 
                     function restart() {
@@ -215,6 +326,47 @@
             </div>
         </footer>
 
+
+        <p>
+            <a id="speech-btn">What am I </a>
+            <script>
+                var button = document.getElementById('speech-btn').addEventListener('click',
+                function onSpeechClick() {
+                    var msg = new SpeechSynthesisUtterance('One');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('Two');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('Three');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('Four');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('Five');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('Six');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('Seven');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('eight');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('Nine');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('10');
+                    window.speechSynthesis.speak(msg);
+                    var msg = new SpeechSynthesisUtterance('Lowes is gay, by the way. He uses linux. Das very gay. And it is fedora. Who uses fedora...? Talk about hipster. Is he trying to beat Ramiro or something?');
+                    window.speechSynthesis.speak(msg);
+                });
+            </script>
+        </p>
+        <p>
+            <a id="speech-btn2">reading?</a>
+            <script>
+                var button = document.getElementById('speech-btn2').addEventListener('click',
+                function onSpeechClick() {
+                    var msg2 = new SpeechSynthesisUtterance('can you like... shut up');
+                    window.speechSynthesis.speak(msg2);
+                });
+            </script>
+        </p>
 
 <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
