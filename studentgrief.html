@@ -127,8 +127,8 @@
             <p id="instructiontext"></p>
 
             <form id="frm1" action="form_action.asp">
-                Final grade value: <input type="number" name="fname" value="10"><br> <br>
-        Grade: <input type="number" name="lname" value="75"><br>
+                This activity/test is worth: <input type="number" name="fname" placeholder="(e.g. 10)"> of the final grade<br> <br>
+        Obtained Grade in this activity/test: <input type="number" name="lname" placeholder="(e.g. 75)"><br>
 
 
             </form>
@@ -247,20 +247,26 @@
 
                         document.getElementById("demo").innerHTML = text;
                     }
+                    function isNumber(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n); }
 
                     function myFunction() {
                         
-                        var x = document.getElementById("frm1");
-                        valorcount++;
-                        objectcount++;
-                        valorParcial[valorcount-1] = parseFloat(x.elements[0].value);
-                        valorFinal[valorcount - 1] = parseFloat(x.elements[1].value);
-                        valorPerdido[valorcount - 1] = parseFloat(x.elements[0].value) - ((parseFloat(x.elements[0].value) * parseFloat(x.elements[1].value)) / 100.0);
-                        valorActive[valorcount - 1] = true;
-                        calculateGrade();
-                        //suma += parseFloat(x.elements[0].value) - ((parseFloat(x.elements[0].value) * parseFloat(x.elements[1].value)) / 100.0);
-                        tableStuff();
+
                         
+                        var x = document.getElementById("frm1");
+                        if (isNumber(x.elements[0].value) && isNumber(x.elements[1].value)) {
+                            valorcount++;
+                            objectcount++;
+                            valorParcial[valorcount - 1] = parseFloat(x.elements[0].value);
+                            valorFinal[valorcount - 1] = parseFloat(x.elements[1].value);
+                            valorPerdido[valorcount - 1] = parseFloat(x.elements[0].value) - ((parseFloat(x.elements[0].value) * parseFloat(x.elements[1].value)) / 100.0);
+                            valorActive[valorcount - 1] = true;
+                            calculateGrade();
+                            //suma += parseFloat(x.elements[0].value) - ((parseFloat(x.elements[0].value) * parseFloat(x.elements[1].value)) / 100.0);
+                            tableStuff();
+                        }
+                        else
+                            alert("Only use numbers please");
                     }
 
                     function restart() {
