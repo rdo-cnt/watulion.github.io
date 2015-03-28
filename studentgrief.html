@@ -128,17 +128,13 @@
 
             <form id="frm1" action="form_action.asp">
                 Final grade value: <input type="number" name="fname" value="10"><br> <br>
-        Grade: <input type="number" name="lname" value="75"><br><br>
+        Grade: <input type="number" name="lname" value="75"><br>
 
 
             </form>
         </div>
 
-
-            <!--Empieza tabla de actividades-->
-            <h1>Table </h1>
-            <h2 id="buttontexto"> </h2>
-                    <p id="tabletext"></p>
+           
                     <script language="javascript" type="text/javascript">
 <!--
 
@@ -154,15 +150,9 @@
     var valorcount = 0, objectcount = 0, pass = "";
     var tabletextvar = "";
     var valorFinal = new Array();
-
     var valorParcial = new Array();
-
-
     var valorPerdido = new Array();
-
-
     var valorActive = new Array();
-
    
     function tableStuff() {
         
@@ -199,15 +189,12 @@
                     tabletextvar += "<td>";
                     tabletextvar += '<button value=' + xq + ' onclick="cancelObject(this.value);" class="btn btn-danger btn-xs">Delete</button>'
                     tabletextvar += "</td>";
-
                 }
                 tabletextvar += "</tr>";
-
             }
             tabletextvar += "</tbody>";
             tabletextvar += "</table>";
         }
-
         //tableobj.innerHTML = tabletextvar;
         document.getElementById("tabletext").innerHTML = tabletextvar;
         //-->
@@ -220,6 +207,7 @@
             <p>Click "Add points" to see how many points you've lost so far. Press Restart when you want to start over</p>
 
             <button type="button" class="btn btn-success" onclick="myFunction()">Add points</button>
+            <button type="button" class="btn btn-warning" onclick="restart()">Restart</button>
 
             </div>
         <br>
@@ -299,13 +287,14 @@
                             document.getElementById("instructiontext").innerHTML = instructiontextvar;
                         }
     </script>
+                <p id="tabletext"></p>
         </div>
     </div>
+
+    </div>
+        <!--Empieza tabla de actividades-->
         
-    <div class="container-fluid">
-        <button type="button" class="btn btn-warning" onclick="restart()">Restart</button>
-        </div>
-    </div>
+        
        
         <footer>
             <div class="container">
