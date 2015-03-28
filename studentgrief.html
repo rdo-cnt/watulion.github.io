@@ -127,8 +127,8 @@
             <p id="instructiontext"></p>
 
             <form id="frm1" action="form_action.asp">
-                Final grade value: <input type="number" name="fname" value="8"><br> <br>
-        Grade: <input type="number" name="lname" value="25"><br><br>
+                Final grade value: <input type="number" name="fname" value="10"><br> <br>
+        Grade: <input type="number" name="lname" value="75"><br><br>
 
 
             </form>
@@ -151,29 +151,17 @@
         calculateGrade();
     }
 
-    var valorcount = 3, objectcount = 3, pass = "";
+    var valorcount = 0, objectcount = 0, pass = "";
     var tabletextvar = "";
     var valorFinal = new Array();
-    valorFinal[0] = "22";
-    valorFinal[1] = "22";
-    valorFinal[2] = "26";
 
     var valorParcial = new Array();
-    valorParcial[0] = "1";
-    valorParcial[1] = "2";
-    valorParcial[2] = "3";
-    valorParcial[3] = "4";
-    valorParcial[4] = "5";
+
 
     var valorPerdido = new Array();
-    valorPerdido[0] = "22";
-    valorPerdido[1] = "22";
-    valorPerdido[2] = "26";
+
 
     var valorActive = new Array();
-    valorActive[0] = true;
-    valorActive[1] = true;
-    valorActive[2] = true;
 
    
     function tableStuff() {
