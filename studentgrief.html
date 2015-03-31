@@ -260,6 +260,32 @@
                             }
                             document.getElementById("instructiontext").innerHTML = instructiontextvar;
                         }
+                        var calculo = 0;
+                        function needed() {
+                                                       
+                            var y = document.getElementById("frm2");
+                            if (isNumber(y.elements[0].value) && isNumber(y.elements[1].value)) {
+                                calculo = ((parseFloat(y.elements[1].value)-(suma-parseFloat(y.elements[0].value)))/parseFloat(y.elements[1].value))*100;
+                                if (calculo > 100)
+                                    text = calculo + "!?? Reset the calculator. It's impossible to lose more than 100 points of your final grade.. unless the teacher gave extra points and you lost those too. Nah, that's impossible. Just restart it already" + "<br>";
+                                else {
+                                    if (calculo == 100)
+                                        text = calculo + "? You lost 100 points? I hope you're just adding numbers randomly. Otherwise reconsider your life" + "<br>";
+                                    else {
+                                        if (calculo > 70)
+                                            text = calculo + " .....If your minimum passing grade is 70 you already lost the battle. Better luck next time" + "<br>";
+                                        else
+                                            if (1 > calculo)
+                                                text = calculo + " .....If your minimum passing grade is 70 you already lost the battle. Better luck next time" + "<br>";
+                                       
+                                    }
+                                }
+                                document.getElementById("final").innerHTML = text;
+
+                            }
+                            else
+                                alert("Only use numbers, please");
+                        }
     </script>
                 <p id="tabletext"></p>
         </div>
