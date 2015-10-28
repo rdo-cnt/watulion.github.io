@@ -1,0 +1,67 @@
+﻿/* Style the main content and the sidebar */
+
+.container{
+	width:900px;
+	margin: 0 auto;
+	overflow:hidden;
+    
+    
+
+}
+
+.main-section{
+	width:calc(100% - 200px);
+	float:left;
+	
+}
+
+.sidebar{
+    z-index : 1000;
+    position:fixed;
+    right: 0px;
+	background-color:#333333;
+	width:200px;
+    height: 2000px;
+        
+	float:right;
+    border-left: 4px solid #1b9bff;
+	
+}
+
+.container p{
+	padding-top:100px;
+	text-align:center;
+}
+
+.note{
+	text-align:center;
+	padding-top:60px;
+	font-style:italic;
+}
+
+/* This simple media query makes the column layout
+   linear on smaller screens */
+
+@media (max-width:650px){
+
+	.container{
+		width:100%;
+        
+	}
+
+	.main-section, .sidebar{
+		width:auto;
+		margin-bottom:20px;
+		float:none;
+	}
+
+    .sidebar{
+    border-left: 0px;
+    border-bottom: 4px solid #1b9bff;
+    height: 100%;
+    position: initial;
+
+    }
+
+
+}
